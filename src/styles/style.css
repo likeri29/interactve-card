@@ -1,5 +1,72 @@
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 500;
+    height: 100%;
+    font-size: 18px;
+}
+
+main {
+    display: flex;
+}
+
+.left {
+    float: left;
+    width: 30%;
+    height: 100vh;
+    background-image: url("../images/bg-main-desktop.png");
+    background-size: cover;
+}
+
+.card-front {
+    position: relative;
+    top: 20%;
+    left: 43%;
+}
+
+.card-back {
+    position: relative;
+    top: 25%;
+    left: 60%;
+}
+
+.card-logo {
+    position: relative;
+    bottom: 25%;
+    right: 30%;
+}
+
+.right {
+    float: right;
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    width: 25rem;
+}
+
+label {
+    display: block;
+}
+
+.big {
+    width: 100%;
+}
+
+.date {
+    width: 6rem;
+    padding: .5rem;
+}
+
+.cvc {
+    width: 45%;
+}
+
 footer {
-    font-size: 11px;
+    font-size: .61rem;
     text-align: center;
 }
 
