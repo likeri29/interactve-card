@@ -35,6 +35,45 @@ main {
     right: 30%;
 }
 
+p {
+    color: hsl(0, 0%, 100%);
+    text-transform: uppercase;
+    font-weight: 500;
+
+}
+
+.cards-number {
+    position: relative;
+    left: 17rem;
+    bottom: 11rem;
+    font-size: 1.5rem;
+    letter-spacing: .4rem;
+}
+
+.cards-name {
+    position: relative;
+    left: 17rem;
+    bottom: 8.2rem;
+    letter-spacing: .2rem;
+    font-size: 1rem;
+
+}
+
+.cards-date {
+    position: relative;
+    left: 38rem;
+    bottom: 9.4rem;
+    letter-spacing: .2rem;
+}
+
+.card-cvc {
+    position: relative;
+    top: 2.55rem;
+    left: 44rem;
+    letter-spacing: .2rem;
+    font-size: .9rem;
+}
+
 .right {
     float: right;
     width: 70%;
@@ -50,19 +89,40 @@ form {
 
 label {
     display: block;
+    margin-bottom: .3rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    font-weight: 500;
+}
+
+input {
+    padding: .3rem;
+    border-width: 2px;
+    margin-bottom: 2rem;
+    border-radius: 5%;
+    border-color: hsl(270, 3%, 87%);
 }
 
 .big {
-    width: 100%;
+    width: 96%;
+}
+
+.grid-date {
+    display: flex;
+    justify-content: space-between;
 }
 
 .date {
-    width: 6rem;
-    padding: .5rem;
+    width: 5rem;
 }
 
 .cvc {
-    width: 45%;
+
+}
+
+.button {
+    width: 100%;
 }
 
 footer {
