@@ -30,7 +30,7 @@
       </svg>
       <p class="cards-number">0000 0000 0000 0000</p>
       <p class="cards-name">jane appleseed</p>
-      <p class="cards-date">00/00</p>
+      <p class="cards-date"><span class="month">00</span><span class="slash">/</span><span class="year">00</span></p>
       <p class="card-cvc">000</p>
     </div>
 
@@ -42,17 +42,17 @@
         </div>
         <div class="card-number">
           <label for="card">Card Number</label>
-          <input type="text" id="card" placeholder="e.g. 1234 5678 9123 0000" class="big form-number" required>
+          <input type="text" id="card" placeholder="e.g. 1234 5678 9123 0000" class="big form-number" maxlength="19" pattern="[0-9 ]+" required>
         </div>
         <div class="grid-date">
           <div class="date-block">
           <label for="date">Exp. Date (MM/YY)</label>
-          <input type="text" id="date" placeholder="MM" class="date form-month" required>
-          <input type="text" id="date" placeholder="YY" class="date form-year" required>
+          <input type="number" id="date" placeholder="MM" class="date form-month" min="1" max="12" required>
+          <input type="text" id="date" placeholder="YY" class="date form-year" maxlength="2" required>
         </div>
           <div class="test">
             <label for="cvc">CVC</label>
-            <input type="text" id="cvc" placeholder="e.g. 123" class="form-cvc" required>
+            <input type="text" id="cvc" placeholder="e.g. 123" class="form-cvc"  maxlength="3" required>
           </div>
         </div>
 
