@@ -35,7 +35,8 @@ main {
     right: 30%;
 }
 
-p, span{
+p,
+span {
     color: hsl(0, 0%, 100%);
     text-transform: uppercase;
     font-weight: 500;
@@ -98,16 +99,43 @@ label {
 
 input {
     border-width: 2px;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     height: 45px;
     border-radius: 8px;
     border: 1.5px solid rgb(110, 109, 109);
     text-indent: 10px;
 }
 
-/* input:active {
-    border-color: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) 1
+.form-block {
+    margin-bottom: 1rem;
+}
+
+input:focus,
+input:active {
+    outline: 0px solid hsl(249, 99%, 64%);
+    border-top-color: hsl(249, 99%, 64%);
+    border-right-color: hsl(278, 94%, 30%);
+    border-bottom-color: hsl(249, 99%, 64%);
+    border-left-color: hsl(278, 94%, 30%);
+}
+
+/* .wrong { 
+    border: 1px solid hsl(0, 100%, 66%);
 } */
+
+/* .wrong-msg {
+    color: hsl(0, 100%, 66%);
+    font-size: 1rem;
+    display: none;
+} */
+
+.form-block.success input {
+    border-color: hsl(0, 100%, 66%);
+}
+
+.form-block.error input {
+    border-color:  hsl(108, 94%, 49%);
+}
 
 .big {
     width: 99%;
@@ -153,7 +181,8 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 /* input[type=number] {

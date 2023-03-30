@@ -1,3 +1,4 @@
+const form = document.querySelector('form');
 const formName = document.querySelector('.form-name');
 const formNumber = document.querySelector('.form-number');
 const formMonth = document.querySelector('.form-month');
@@ -10,6 +11,12 @@ const cardNumber = document.querySelector('.cards-number');
 const cardMonth = document.querySelector('.month');
 const cardYear = document.querySelector('.year');
 const cardCvc = document.querySelector('.card-cvc');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+})
+
+
 
 // event for NAME
 formName.addEventListener('input', (e) => {
@@ -91,3 +98,14 @@ formCvc.addEventListener('input', (e) => {
         cardCvc.innerText = formCvc.value;
     }
 })
+
+
+//form validation
+
+function validateForm() {
+    if (formName.value === '') {
+        setErrorFor(formName, "Can't be blank");
+    } else {
+        setSuccessFor(formName);
+    }
+}

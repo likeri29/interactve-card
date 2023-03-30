@@ -35,24 +35,29 @@
     </div>
 
     <div class="right">
-      <form action="#">
-        <div class="card-name">
+      <form action="#" onsubmit="return validateForm()">
+        <div class="card-name form-block">
           <label for="name">Cardholder name</label>
           <input type="text" id="name" placeholder="e.g. Jane Appleseed" class="big form-name" required>
+          <small>Error Message</small>
         </div>
-        <div class="card-number">
+        <div class="card-number form-block">
           <label for="card">Card Number</label>
-          <input type="text" id="card" placeholder="e.g. 1234 5678 9123 0000" class="big form-number" maxlength="19" pattern="[0-9 ]+" required>
+          <input type="text" id="card" placeholder="e.g. 1234 5678 9123 0000" class="big form-number" maxlength="19"
+            pattern="[0-9 ]+" required>
+          <small>Error Message</small>
         </div>
-        <div class="grid-date">
+        <div class="grid-date form-block">
           <div class="date-block">
-          <label for="date">Exp. Date (MM/YY)</label>
-          <input type="number" id="date" placeholder="MM" class="date form-month" min="1" max="12" required>
-          <input type="text" id="date" placeholder="YY" class="date form-year" maxlength="2" required>
-        </div>
-          <div class="test">
+            <label for="date">Exp. Date (MM/YY)</label>
+            <input type="number" id="date" placeholder="MM" class="date form-month" min="1" max="12" required>
+            <input type="text" id="date" placeholder="YY" class="date form-year" maxlength="2" required>
+            <small>Error Message</small>
+          </div>
+          <div class="form-block">
             <label for="cvc">CVC</label>
-            <input type="text" id="cvc" placeholder="e.g. 123" class="form-cvc"  maxlength="3" required>
+            <input type="text" id="cvc" placeholder="e.g. 123" class="form-cvc" maxlength="3" required>
+            <small>Error Message</small>
           </div>
         </div>
 
