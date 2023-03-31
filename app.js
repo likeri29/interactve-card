@@ -5,6 +5,8 @@ const formMonth = document.querySelector('.form-month');
 const formYear = document.querySelector('.form-year');
 const formCvc = document.querySelector('.form-cvc');
 const button = document.querySelector('.button');
+const complete = document.querySelector('.complete-state');
+const compBtn = document.querySelector('.complete-button')
 
 const cardName = document.querySelector('.cards-name');
 const cardNumber = document.querySelector('.cards-number');
@@ -16,7 +18,9 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
 })
 
-
+compBtn.addEventListener('click', e => {
+    window.location.reload();
+})
 
 // event for NAME
 formName.addEventListener('input', (e) => {
@@ -103,9 +107,60 @@ formCvc.addEventListener('input', (e) => {
 //form validation
 
 function validateForm() {
+
+    const numberRGEX = /[0-9]/
+    const numberResult = numberRGEX.test(formNumber.value.trim())
+
     if (formName.value === '') {
         setErrorFor(formName, "Can't be blank");
     } else {
         setSuccessFor(formName);
     }
+    if (formNumber.value === '' || formNumber.value.length != 19 ) {
+        setErrorFor(formNumber, "Can't be blank");
+    } else if (numberResult == false) {
+        setErrorFor(formNumber, 'Only digits');
+    } else {
+        setSuccessFor(formNumber);
+    }
+    if (formMonth.value === '') {
+        setErrorFor(formMonth, "Can't be blank");
+    } else {
+        setSuccessFor(formMonth);
+    }
+    if (formYear.value === '') {
+        setErrorFor(formYear, "Can't be blank");
+    } else {
+        setSuccessFor(formYear);
+    }
+    if (formCvc.value === '') {
+        setErrorFor(formCvc, "Can't be blank");
+    } else {
+        setSuccessFor(formCvc);
+    }
+
+    if (formName.value && formNumber.value && formMonth.value && formYear.value && formCvc.value != '') {
+        form.style.display = 'none';
+        complete.style.display = 'flex';
+    }
 }
+
+
+//error message
+function setErrorFor(input, message) {
+    const formControl = input.parentElement; 
+    const small = formControl.querySelector('small');
+    // formControl.classList.add('error');
+    formControl.className = 'form-block error'
+    small.innerText = message;
+    small.style.visibility = 'visible';
+}
+
+//success mesage
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+    formControl.className = 'form-block success';
+    small.style.visibility = 'hidden';
+}
+
